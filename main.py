@@ -5,7 +5,7 @@ from ulauncher.api.shared.action.RenderResultListAction import RenderResultListA
 
 from src.functions import strip_list
 from src.translate_shell import TranslateShell
-from src.items import no_input_item, missing_dep_item, show_used_args, generate_trans_items, no_translation_available
+from src.items import no_input_item, missing_dep_item, show_used_args, generate_trans_items, no_translation_available, generate_copy_item, generate_trans_link_item
 
 class TranslateExtension(Extension):
     def __init__(self):
