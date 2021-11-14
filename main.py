@@ -25,6 +25,7 @@ class KeywordQueryEventListener(EventListener):
 
         params = strip_list(query.split(' '))
 
+        global parser
         parser = TranslateShell(extension.preferences, params)
 
         if parser.is_dep_missing():
@@ -36,6 +37,7 @@ class KeywordQueryEventListener(EventListener):
         if not parser.has_query():
             return RenderResultListAction(show_used_args(parser))
 
+        global translations
         translations = parser.execute()
 
         if not translations:
