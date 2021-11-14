@@ -68,7 +68,7 @@ def generate_trans_link_item(translation, original, from_lang, to_lang):
         icon=ICON_FILE,
         name='Open in Google Translate',
         description='https://translate.google.com/?sl={}&tl={}&text={}&op=translate'.format(from_lang, to_lang, original),
-        on_enter=OpenUrlAction(description)
+        on_enter=OpenUrlAction('https://translate.google.com/?sl={}&tl={}&text={}&op=translate'.format(from_lang, to_lang, original))
     )
 
 
