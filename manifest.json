@@ -18,15 +18,14 @@
     {
       "id": "from_lang",
       "type": "text",
-      "name": "From lang",
-      "description": "Lang to use by default for translation",
+      "name": "From language",
+      "description": "Default language used for translation",
       "default_value": "auto"
     },
     {
       "id": "to_lang",
       "type": "text",
-      "name": "To lang",
-      "description": "Lang translate to",
+      "name": "To language",
       "default_value": "auto"
     }
   ]

@@ -38,19 +38,43 @@ def missing_dep_item():
     ]
 
 
-def generate_trans_item(translation, original, to_lang):
+def generate_trans_item(translation, original, from_lang, to_lang):
     return ExtensionResultItem(
         icon=ICON_FILE,
         name=translation,
         description='{}: {}'.format(to_lang, original),
-        on_enter=CopyToClipboardAction(translation)
+        on_enter=generate_options(translation, original, from_lang, to_lang)
     )
 
 
 def generate_trans_items(translations):
     return [
-        generate_trans_item(translation, original, to_lang)
-    for (translation, original, to_lang) in translations]
+        generate_trans_item(translation, original, from_lang, to_lang)
+    for (translation, original, from_lang, to_lang) in translations]
+
+
+def generate_options(translation, original, from_lang, to_lang):
+    return [
+        generate_copy_item(translation),
+        generate_trans_link_item(translation, original, from_lang, to_lang)
+    ]
+
+
+def generate_copy_item(translation):
+    return ExtensionResultItem(
+        icon=ICON_FILE,
+        name='Copy translation to clipboard',
+        on_enter=CopyToClipboardAction(translation)
+    )
+
+
+def generate_trans_link_item(translation, original, from_lang, to_lang):
+    return ExtensionResultItem(
+        icon=ICON_FILE,
+        name='Open in Google Translate',
+        description='https://translate.google.com/?sl={}&tl={}&text={}&op=translate'.format(from_lang, to_lang, original),
+        on_enter=OpenUrlAction(description)
+    )
 
 
 def lang_items(from_lang, to_lang):
