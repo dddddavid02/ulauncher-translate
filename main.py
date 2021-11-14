@@ -53,19 +53,19 @@ class ItemEnterEventListener(EventListener):
 
         data = event.get_data()
 
-        if data[0] == '__back':
-            return RenderResultListAction(generate_trans_items(translations, parser.from_lang.split('+')))
-        else:
-            translation = data[0]
-            original = data[1]
-            from_lang = data[2]
-            to_lang = data[3]
+#        if data[0] == '__back':
+#            return RenderResultListAction(generate_trans_items(translations, parser.from_lang.split('+')))
+#        else:
+        translation = data[0]
+        original = data[1]
+        from_lang = data[2]
+        to_lang = data[3]
 
-            return RenderResultListAction([
-                generate_back_item(),
-                generate_copy_item(translation),
-                generate_trans_link_item(translation, original, from_lang, to_lang)
-            ])
+        return RenderResultListAction([
+            generate_back_item(translations, parser),
+            generate_copy_item(translation),
+            generate_trans_link_item(translation, original, from_lang, to_lang)
+        ])
 
 
 

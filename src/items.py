@@ -1,3 +1,4 @@
+from ulauncher.api.shared.action.RenderResultListAction import RenderResultListAction
 from ulauncher.api.shared.item.ExtensionResultItem import ExtensionResultItem
 from ulauncher.api.shared.action.CopyToClipboardAction import CopyToClipboardAction
 from ulauncher.api.shared.action.HideWindowAction import HideWindowAction
@@ -54,11 +55,12 @@ def generate_trans_items(translations, from_languages):
     for (translation, original, to_lang) in translations for from_lang in from_languages]
 
 
-def generate_back_item():
+def generate_back_item(translations, parser):
     return ExtensionResultItem(
         icon='images/back.png',
         name='Go back',
-        on_enter=ExtensionCustomAction('__back', keep_app_open=True)
+        #on_enter=ExtensionCustomAction('__back', keep_app_open=True)
+        on_enter=RenderResultListAction(generate_trans_items(translations, parser.from_lang.split('+')))
     )
 
 
