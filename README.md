@@ -34,7 +34,7 @@ Follow instruction: https://github.com/soimort/translate-shell#installation.
 
 1. Open Ulauncher's settings and the "Extensions" tab
 2. Click "Add extension" button
-3. Paste this URL: `https://github.com/NastuzziSamy/ulauncher-translate`
+3. Paste this URL: `https://github.com/dddddavid02/ulauncher-translate`
 4. Click "Add" button – the extension will be installed
 
 ### Manually from source
