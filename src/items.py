@@ -58,7 +58,7 @@ def generate_back_item():
     return ExtensionResultItem(
         icon=ICON_FILE,
         name='Go back',
-        on_enter=ExtensionCustomAction('', keep_app_open=True)
+        on_enter=ExtensionCustomAction('back', keep_app_open=True)
     )
 
 
