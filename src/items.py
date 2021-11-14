@@ -66,8 +66,8 @@ def generate_back_item(translations, parser):
 def generate_copy_item(translation):
     return ExtensionResultItem(
         icon='images/copy.png',
-        name=translation,
-        description='Copy to clipboard',
+        name='Copy to clipboard',
+        description=translation,
         on_enter=CopyToClipboardAction(translation)
     )
 
