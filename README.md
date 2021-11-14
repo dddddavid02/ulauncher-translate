@@ -2,10 +2,7 @@
 
 This is a Ulauncher extension to translate.
 
-## Table of Contents
-
-- [Table of Contents](#table-of-contents)
-- [Screenshot](#screenshot)
+- [Screenshots](#screenshots)
 - [Installation](#installation)
   - [Requirements](#requirements)
   - [Ulauncher's GUI](#ulaunchers-gui)
