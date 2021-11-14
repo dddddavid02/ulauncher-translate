@@ -59,7 +59,6 @@ def generate_back_item(translations, parser):
     return ExtensionResultItem(
         icon='images/back.png',
         name='Go back',
-        #on_enter=ExtensionCustomAction('__back', keep_app_open=True)
         on_enter=RenderResultListAction(generate_trans_items(translations, parser.from_lang.split('+')))
     )
 
@@ -67,12 +66,13 @@ def generate_back_item(translations, parser):
 def generate_copy_item(translation):
     return ExtensionResultItem(
         icon='images/copy.png',
-        name='Copy translation to clipboard',
+        name=translation,
+        description='Copy to clipboard',
         on_enter=CopyToClipboardAction(translation)
     )
 
 
-def generate_trans_link_item(translation, original, from_lang, to_lang):
+def generate_trans_link_item(original, from_lang, to_lang):
     return ExtensionResultItem(
         icon='images/open.png',
         name='Open in Google Translate',

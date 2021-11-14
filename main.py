@@ -49,13 +49,9 @@ class KeywordQueryEventListener(EventListener):
 class ItemEnterEventListener(EventListener):
 
     def on_event(self, event, extension):
-        # event is instance of ItemEnterEvent
 
         data = event.get_data()
 
-#        if data[0] == '__back':
-#            return RenderResultListAction(generate_trans_items(translations, parser.from_lang.split('+')))
-#        else:
         translation = data[0]
         original = data[1]
         from_lang = data[2]
