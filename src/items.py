@@ -56,7 +56,7 @@ def generate_trans_items(translations, from_lang):
 
 
 def generate_options(translation, original, from_lang, to_lang, n):
-    if i == 0:
+    if n == 0:
         return generate_copy_item(translation)
     else:
         return generate_trans_link_item(translation, original, from_lang, to_lang)
