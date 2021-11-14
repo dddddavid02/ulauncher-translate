@@ -53,7 +53,9 @@ class ItemEnterEventListener(EventListener):
 
         data = event.get_data()
 
-        if len(data) != 1:
+        if data[0] == '__back':
+            return RenderResultListAction(generate_trans_items(translations, parser.from_lang.split('+')))
+        else:
             translation = data[0]
             original = data[1]
             from_lang = data[2]
@@ -64,8 +66,6 @@ class ItemEnterEventListener(EventListener):
                 generate_copy_item(translation),
                 generate_trans_link_item(translation, original, from_lang, to_lang)
             ])
-        else:
-            return RenderResultListAction(generate_trans_items(translations, parser.from_lang.split('+')))
 
 
 
