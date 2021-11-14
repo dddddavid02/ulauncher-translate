@@ -60,7 +60,7 @@ class ItemEnterEventListener(EventListener):
         return RenderResultListAction([
             generate_back_item(translations, parser),
             generate_copy_item(translation),
-            generate_trans_link_item(translation, original, from_lang, to_lang)
+            generate_trans_link_item(original, from_lang, to_lang)
         ])
 
 
