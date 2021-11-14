@@ -5,7 +5,7 @@ from ulauncher.api.shared.action.RenderResultListAction import RenderResultListA
 
 from src.functions import strip_list
 from src.translate_shell import TranslateShell
-from src.items import no_input_item, missing_dep_item, show_used_args, generate_trans_items, no_translation_available, generate_copy_item, generate_trans_link_item
+from src.items import no_input_item, missing_dep_item, show_used_args, generate_trans_items, no_translation_available, generate_back_item, generate_copy_item, generate_trans_link_item
 
 class TranslateExtension(Extension):
     def __init__(self):
@@ -13,6 +13,10 @@ class TranslateExtension(Extension):
 
         self.subscribe(KeywordQueryEvent, KeywordQueryEventListener())
         self.subscribe(ItemEnterEvent, ItemEnterEventListener())
+
+
+parser = None
+translations = None
 
 
 class KeywordQueryEventListener(EventListener):
@@ -53,6 +57,7 @@ class ItemEnterEventListener(EventListener):
         to_lang = data[3]
 
         return RenderResultListAction([
+            generate_back_item(translations, parser),
             generate_copy_item(translation),
             generate_trans_link_item(translation, original, from_lang, to_lang)
         ])

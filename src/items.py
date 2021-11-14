@@ -54,6 +54,10 @@ def generate_trans_items(translations, from_languages):
     for (translation, original, to_lang) in translations for from_lang in from_languages]
 
 
+def generate_back_item(translations, parser):
+    return generate_trans_items(translations, parser.from_lang.split('+'))
+
+
 def generate_copy_item(translation):
     return ExtensionResultItem(
         icon=ICON_FILE,
