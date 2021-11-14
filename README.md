@@ -4,18 +4,17 @@ This is a Ulauncher extension to translate.
 
 ## Table of Contents
 
-- [Translate](#translate)
-  - [Table of Contents](#table-of-contents)
-  - [Screenshot](#screenshot)
-  - [Installation](#installation)
-    - [Requirements](#requirements)
-    - [Ulauncher's GUI](#ulaunchers-gui)
-    - [Manually from source](#manually-from-source)
-  - [Configuration](#configuration)
-  - [Usage](#usage)
-    - [Langagues](#langagues)
-    - [Options](#options)
-  - [License](#license)
+- [Table of Contents](#table-of-contents)
+- [Screenshot](#screenshot)
+- [Installation](#installation)
+  - [Requirements](#requirements)
+  - [Ulauncher's GUI](#ulaunchers-gui)
+  - [Manually from source](#manually-from-source)
+- [Configuration](#configuration)
+- [Usage](#usage)
+  - [Langagues](#langagues)
+  - [Options](#options)
+- [License](#license)
 
 ## Screenshots
 
