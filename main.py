@@ -36,7 +36,7 @@ class KeywordQueryEventListener(EventListener):
         if not translations:
             return RenderResultListAction(no_translation_available())
 
-        return RenderResultListAction(generate_trans_items(translations))
+        return RenderResultListAction(generate_trans_items(translations, parser.from_lang.split('+')))
 
 
 if __name__ == '__main__':

@@ -47,15 +47,16 @@ def generate_trans_item(translation, original, from_lang, to_lang):
     )
 
 
-def generate_trans_items(translations):
+def generate_trans_items(translations, from_lang):
     return [
         generate_trans_item(translation, original, from_lang, to_lang)
-    for (translation, original, from_lang, to_lang) in translations]
+    for (translation, original, to_lang) in translations)
+    for from_lang in from_lang]
 
 
 def generate_options(translation, original, from_lang, to_lang):
     return [
-        # generate_copy_item(translation),
+        generate_copy_item(translation),
         generate_trans_link_item(translation, original, from_lang, to_lang)
     ]
 
