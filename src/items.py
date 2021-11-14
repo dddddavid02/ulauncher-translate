@@ -48,18 +48,16 @@ def generate_trans_item(translation, original, from_lang, to_lang):
     )
 
 
-def generate_trans_items(translations, from_lang):
+def generate_trans_items(translations, from_languages):
     return [
         generate_trans_item(translation, original, from_lang, to_lang)
-    for (translation, original, to_lang) in translations
-    for from_lang in from_lang]
+    for (translation, original, to_lang) in translations for from_lang in from_languages]
 
 
 def generate_copy_item(translation):
     return ExtensionResultItem(
         icon=ICON_FILE,
         name='Copy translation to clipboard',
-        description='',
         on_enter=CopyToClipboardAction(translation)
     )
 
