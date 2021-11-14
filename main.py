@@ -52,7 +52,10 @@ class ItemEnterEventListener(EventListener):
         from_lang = data[2]
         to_lang = data[3]
 
-        return RenderResultListAction([generate_copy_item(translation), generate_trans_link_item(translation, original, from_lang, to_lang)])
+        return RenderResultListAction([
+            generate_copy_item(translation),
+            generate_trans_link_item(translation, original, from_lang, to_lang)
+        ])
 
 
 if __name__ == '__main__':

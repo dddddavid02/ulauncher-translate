@@ -59,6 +59,7 @@ def generate_copy_item(translation):
     return ExtensionResultItem(
         icon=ICON_FILE,
         name='Copy translation to clipboard',
+        description='',
         on_enter=CopyToClipboardAction(translation)
     )
 
