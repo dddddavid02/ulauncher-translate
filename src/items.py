@@ -3,6 +3,7 @@ from ulauncher.api.shared.action.CopyToClipboardAction import CopyToClipboardAct
 from ulauncher.api.shared.action.HideWindowAction import HideWindowAction
 from ulauncher.api.shared.action.DoNothingAction import DoNothingAction
 from ulauncher.api.shared.action.OpenUrlAction import OpenUrlAction
+from ulauncher.api.shared.action.ExtensionCustomAction import ExtensionCustomAction
 
 from src.functions import arg_to_help
 
@@ -43,21 +44,22 @@ def generate_trans_item(translation, original, from_lang, to_lang):
         icon=ICON_FILE,
         name=translation,
         description='{}: {}'.format(to_lang, original),
-        on_enter=generate_options(translation, original, from_lang, to_lang)
+        on_enter=ExtensionCustomAction([translation, original, from_lang, to_lang], keep_app_open=True)
     )
 
 
 def generate_trans_items(translations, from_lang):
     return [
         generate_trans_item(translation, original, from_lang, to_lang)
-    for (translation, original, to_lang) in translations]
+    for (translation, original, to_lang) in translations
+    for from_lang in from_lang]
 
 
-def generate_options(translation, original, from_lang, to_lang):
-    return [
-        generate_copy_item(translation),
-        generate_trans_link_item(translation, original, from_lang, to_lang)
-    ]
+def generate_options(translation, original, from_lang, to_lang, n):
+    if i == 0:
+        return generate_copy_item(translation)
+    else:
+        return generate_trans_link_item(translation, original, from_lang, to_lang)
 
 
 def generate_copy_item(translation):

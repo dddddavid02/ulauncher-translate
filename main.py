@@ -12,6 +12,7 @@ class TranslateExtension(Extension):
         super(TranslateExtension, self).__init__()
 
         self.subscribe(KeywordQueryEvent, KeywordQueryEventListener())
+        self.subscribe(ItemEnterEvent, ItemEnterEventListener())
 
 
 class KeywordQueryEventListener(EventListener):
@@ -37,6 +38,17 @@ class KeywordQueryEventListener(EventListener):
             return RenderResultListAction(no_translation_available())
 
         return RenderResultListAction(generate_trans_items(translations, parser.from_lang.split('+')))
+
+
+class ItemEnterEventListener(EventListener):
+
+    def on_event(self, event, extension):
+        # event is instance of ItemEnterEvent
+
+        data = event.get_data()
+
+        for i in range(2):
+            generate_options(data[0], data[1], data[2], data[3], i)
 
 
 if __name__ == '__main__':
