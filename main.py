@@ -46,9 +46,13 @@ class ItemEnterEventListener(EventListener):
         # event is instance of ItemEnterEvent
 
         data = event.get_data()
+        
+        translation = data[0]
+        original = data[1]
+        from_lang = data[2]
+        to_lang = data[3]
 
-        for i in range(2):
-            generate_options(data[0], data[1], data[2], data[3], i)
+        return RenderResultListAction([generate_copy_item(translation), generate_trans_link_item(translation, original, from_lang, to_lang)])
 
 
 if __name__ == '__main__':
