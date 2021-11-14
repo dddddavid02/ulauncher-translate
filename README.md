@@ -17,9 +17,10 @@ This is a Ulauncher extension to translate.
     - [Options](#options)
   - [License](#license)
 
-## Screenshot
+## Screenshots
 
 ![Screenshot](images/screenshot.png)
+![Screenshot2](images/screenshot2.png)
 
 ## Installation
 
