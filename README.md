@@ -2,6 +2,8 @@
 
 This is a Ulauncher extension to translate.
 
+## Table of contents
+
 - [Screenshots](#screenshots)
 - [Installation](#installation)
   - [Requirements](#requirements)
