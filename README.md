@@ -20,6 +20,8 @@ This is a Ulauncher extension to translate.
 ![Screenshot](images/screenshot.png)
 ![Screenshot2](images/screenshot2.png)
 
+<a href="https://icons8.com/">Icons by Icons8</a>
+
 ## Installation
 
 ### Requirements
