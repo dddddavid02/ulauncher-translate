@@ -1,21 +1,21 @@
 # Translate
 
-This is a Ulauncher extension to translate.
+This is a fork of the original Translate extension by Nastuzzi Samy (@NastuzziSamy) with improved functionalities.
 
 ## Table of contents
 
-- [Screenshots](#screenshots)
+- [Preview](#preview)
 - [Installation](#installation)
   - [Requirements](#requirements)
   - [Ulauncher's GUI](#ulaunchers-gui)
   - [Manually from source](#manually-from-source)
 - [Configuration](#configuration)
 - [Usage](#usage)
-  - [Langagues](#langagues)
+  - [Languages](#languages)
   - [Options](#options)
 - [License](#license)
 
-## Screenshots
+## Preview
 
 ![Screenshot](images/screenshot.png)
 ![Screenshot2](images/screenshot2.png)
@@ -26,67 +26,63 @@ This is a Ulauncher extension to translate.
 
 ### Requirements
 
-In order to work, this extension requires `translate-shell` to be installed.
+This extension requires [Translate Shell](https://github.com/soimort/translate-shell#installation) in order to work.
 
-Follow instruction: https://github.com/soimort/translate-shell#installation.
+### 1. Ulauncher's GUI
 
-### Ulauncher's GUI
+Open Ulauncher's preferences window > Extensions > Add Extension and paste the following URL:
 
-1. Open Ulauncher's settings and the "Extensions" tab
-2. Click "Add extension" button
-3. Paste this URL: `https://github.com/dddddavid02/ulauncher-translate`
-4. Click "Add" button – the extension will be installed
+```
+https://github.com/dddddavid02/ulauncher-translate
+```
 
-### Manually from source
+### 2. Manually from source
 
-The extensions' directory is located at: `$HOME/.local/share/ulauncher/extensions`
+Open the folder containing all Ulauncher extensions and move the extensions's folder inside or just `git clone` this repository.
 
-Go to that location, and while being inside, just `git clone` this repository.
+```
+$HOME/.local/share/ulauncher/extensions
+```
 
 ## Configuration
 
-In Ulauncher's settings, you can custom some settings:
-- Keyword
-  - default: `trans`
+In Ulauncher's settings, you can customise:
+- **Translate keyword**
+  - Default: `trans`
 
-- From lang: Lang uses for translation
-  - default: `auto`
-  - indicate lang code as `en`, `fr`, `es`
+- **From language**
+  - Default: `auto`
+  - Indicate languages as `en`, `it`, `fr`, `es`...
 
-- To lang: Lang translate to
-  - default: `auto`
-  - indicate lang code as `en`, `fr`, `es`
+- **To language**
+  - [All language codes](https://github.com/soimort/translate-shell/wiki/Languages)
 
 ## Usage
 
-To translate, use the keyword (default is `trans`), then type/paste and wait for the extension to translate (0.5 sec after your last keypress).
+To translate, open Ulauncher and type the set keyword (by default it's `trans`),  
+then simply type or paste the text and wait for the result!
+ 
+By clicking or pressing ENTER on a translation, you can select whether you want to copy it or open it in Google Translate.
 
-Click/Press ENTER to copy the translation.
+### Languages
 
-### Langagues
+By default, it will autodetect your language and translate accordingly.
 
-This extension translates with Google Translation.
+You can also specify languages in this format `from_language:to_language`.
+If you decide to not indicate either one or the other parameter, the default values will be used.
+It's also possible to translate to multiple languages at once using the `+` operator.
 
-By default, it will auto detect your language and translate.
+For example:
 
-Specify languages like this:
-> Examples:
->
-> - `trans en:fr` for English to French
->
-> - `trans :fr` for (default `from_lang`) to French
->
-> - `trans en:` for English to (default `to_lang`)
-
-You can also translate into multiple languages using `+` operator:
-> Example:
->
-> - `trans en:fr+es` will translate to French and Spanish.
+- `trans en:fr` to translate from English to French
+- `trans :fr` to translate from the detected language to French
+- `trans en:` to translate from English to your language
+- `trans en:fr+es` to translate from English to French and Spanish
 
 ### Options
 
-- `-sp`: Read what you entered
-- `-p`: Read the translation
+- `-sp`: to read what you entered
+- `-p`: to read the translation
 
 ## License
 
